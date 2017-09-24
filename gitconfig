@@ -1,0 +1,35 @@
+
+[user]
+	name = Yurii Pyvovarov
+	email = yuriy.pyvovarov@gmail.com
+[core]
+	autocrlf = input
+	editor = emacsclient -c
+	excludesfile = ~/.gitignore_global
+[credential]
+	helper = cache
+[color]
+	ui = auto
+[http]
+	sslVerify = false
+[push]
+	default = simple
+[alias]
+	ap = add --patch
+	s = status
+	l = log
+	cl = clone
+	co = checkout
+	br = branch
+	ci = commit -v
+	df = diff --word-diff=color
+	dfst = diff --staged
+	hist = log --pretty=format:\"%Cred%h %Creset%ad %Cred| [%an] | %Cgreen%s%d\" --graph --date=short --color
+	dc = log --graph --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset\" --abbrev-commit --date=relative
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[merge]
+	tool = meld
+[diff]
+	tool = meld
+[magit]
+	hideCampaign = true
