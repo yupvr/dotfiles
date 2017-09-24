@@ -233,4 +233,3 @@
 ;; (require 'flycheck-gometalinter)
 ;; (eval-after-load 'flycheck
 ;;   '(add-hook 'flycheck-mode-hook #'flycheck-gometalinter-setup))
-e
