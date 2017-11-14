@@ -16,7 +16,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (zeal-at-point web-mode highlight-indent-guides robe inf-ruby rvm flycheck-gometalinter go-guru gotest go-snippets go-scratch go-eldoc company-go go-mode pass apache-mode nginx-mode flyspell-popup exec-path-from-shell docker-compose-mode dockerfile-mode ssh-config-mode ansible company-ansible indent-tools flycheck-yamllint yaml-mode ag json-mode chef-mode highlight-blocks yasnippet yasnippet-snippets all-the-icons-ivy counsel counsel-projectile ivy swiper projectile avy avy-flycheck flycheck company-quickhelp company company-statistics solarized-theme theme-changer zenburn-theme nyan-mode spaceline-all-the-icons spaceline all-the-icons-dired all-the-icons smex switch-window tabbar diff-hl magit smartparens markdown-mode)))
+    (multiple-cursors puppet-mode ox-twbs rainbow-mode zeal-at-point web-mode highlight-indent-guides robe inf-ruby rvm flycheck-gometalinter go-guru gotest go-snippets go-scratch go-eldoc company-go go-mode pass apache-mode nginx-mode flyspell-popup exec-path-from-shell docker-compose-mode dockerfile-mode ssh-config-mode ansible company-ansible indent-tools flycheck-yamllint yaml-mode ag json-mode chef-mode highlight-blocks yasnippet yasnippet-snippets all-the-icons-ivy counsel counsel-projectile ivy swiper projectile avy avy-flycheck flycheck company-quickhelp company company-statistics solarized-theme theme-changer zenburn-theme nyan-mode spaceline-all-the-icons spaceline all-the-icons-dired all-the-icons smex switch-window tabbar diff-hl magit smartparens markdown-mode)))
  '(spaceline-all-the-icons-clock-always-visible nil)
  '(spaceline-all-the-icons-separator-type (quote arrow))
  '(spaceline-all-the-icons-slim-render t))
@@ -143,6 +143,12 @@
 (setq magit-completing-read-function 'ivy-completing-read)
 (all-the-icons-ivy-setup)
 
+;; MULTIPLE-CURSORS
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
 ;; YASNIPPET
 ;; Enable yasnippet
 (yas-global-mode 1)
@@ -179,6 +185,18 @@
 (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
 ;; Enable robe
 (add-hook 'ruby-mode-hook 'robe-mode)
+
+;; ORG-MODE
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cb" 'org-iswitchb)
+;; Set to the location of your Org files on your local system
+(setq org-directory "~/org")
+;; Set to the name of the file where new notes will be stored
+(setq org-mobile-inbox-for-pull "~/org/flagged.org")
+;; Set to <your Dropbox root directory>/MobileOrg.
+(setq org-mobile-directory "~/Dropbox/Програми/MobileOrg")
 
 ;; JSON
 ;; Show line numbers
